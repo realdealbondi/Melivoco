@@ -1,4 +1,4 @@
-# MELLIVOCO
+# MELIVOCO
 
 Longitudinal vocal analysis software — a Strava for your voice.
 
