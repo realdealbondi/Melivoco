@@ -103,6 +103,21 @@ Dropped:
 6. Take Explorer reads from the engine/store so the artist can sift, trim, annotate, segment, tag, and search takes later — after the session, not during it.
 7. Fatigue Watch charts that session from beginning to end: warm-up end, peak, fall-off.
 
+## Code Complete — Architecture
+
+### Program Organization
+
+- The architecture should define the major building blocks in a program.
+- In the architecture, you should find evidence that alternatives to the final organization were considered and find the reasons for choosing the final organization over its alternatives.
+- Every feature listed in the requirements should be covered by at least one building block.
+- If a function is claimed by two or more building blocks their claims should cooperate not conflict.
+- What each building block is responsible for should be well defined.
+- A building block should have one area of responsibility and it should know as little as possible about other building blocks areas of responsibility.
+- The communication rules for each building block should be well defined.
+- The architecture should describe which other building blocks the building block can use directly which it can use indirectly and which it shouldn't use at all.
+
+### Major Classes
+
 ## Open questions
 
 
