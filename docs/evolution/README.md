@@ -6,6 +6,13 @@ New entries go at the top, newest first. Each entry names the date, what changed
 
 ---
 
+## 2026-11-24 — Code Complete Architecture rules added to the architecture doc
+
+- **What changed:** A Code Complete — Architecture section was added to the architecture doc, with verbatim rules under five subsections: Program Organization (8 rules), Major Classes (6 rules, including the 80/20 rule), Data Design (5 rules), User Interface Design (3 rules), and Resource Management (2 rules). The additions were pushed to the repo in three steps (commits ee8b4ae, 660a634, and e84fbb3).
+- **Why:** Seth directed that further Code Complete rules go into the architecture doc rather than the requirements doc, kept as the book's own rules, as written — like the periodic table — so a later builder handoff has everything it needs in the document that describes how the system is built.
+- **What it replaced / what was considered:** This follows the requirements split earlier the same day, where the 26 prerequisite rules were moved out into their own requirements doc. The alternative was to keep adding all Code Complete material to that requirements doc; Seth chose the architecture doc for these architecture rules instead.
+- **Trade-off accepted:** The architecture doc now carries verbatim reference rules alongside Melivoco's own design decisions, so it is longer and mixes the book's checklist with the project's choices — accepted in exchange for having the full architecture standard in one place.
+
 ## 2026-11-24 — Requirements split out; Code Complete prerequisites completed
 
 - **What changed:** The 26 Code Complete prerequisites Seth dictated verbatim were finished and moved out of the architecture doc into their own requirements doc — 7 Specific Functional Requirements, 7 Specific Non-Functional Requirements (Quality), 9 Requirements Quality, and 3 Requirements Completeness. The architecture doc is architecture only again. The repo was also renamed by Seth himself to Melivoco (single l), matching the brand spelling.
