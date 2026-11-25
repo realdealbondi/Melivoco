@@ -6,6 +6,13 @@ New entries go at the top, newest first. Each entry names the date, what changed
 
 ---
 
+## 2026-11-24 — Requirements split out; Code Complete prerequisites completed
+
+- **What changed:** The 26 Code Complete prerequisites Seth dictated verbatim were finished and moved out of the architecture doc into their own requirements doc — 7 Specific Functional Requirements, 7 Specific Non-Functional Requirements (Quality), 9 Requirements Quality, and 3 Requirements Completeness. The architecture doc is architecture only again. The repo was also renamed by Seth himself to Melivoco (single l), matching the brand spelling.
+- **Why:** The rules are the book's own, as written — like the periodic table — and they belong as requirements, not mixed into how the system is built. Keeping them separate means each doc has one job, and the architecture can be handed to a builder without the requirements getting lost in it.
+- **What it replaced / what was considered:** The requirements had been added directly into the architecture doc as they were dictated. The alternative was leaving them there; splitting them keeps the architecture doc focused on the design.
+- **Trade-off accepted:** Two docs to keep in sync instead of one — the requirements doc points to the architecture doc, and new Code Complete rules Seth adds next go into the architecture doc at his request.
+
 ## 2026-11-24 — Architecture locked in (documentation phase)
 
 - **Shape chosen:** a thin coordinator over a central SQLite store of take stats, with small pure analysis services behind it (fatigue, trends, sessions). Centralise the data and the interface; decentralise the computing. It won by a marginal amount over a direct pipeline and an event bus — the differences were small, and all options were weighed with full pros and cons.
