@@ -125,6 +125,25 @@ Dropped:
 - The architecture should describe other class designs that were considered and give reasons for preferring the organization that was chosen.
 - The architecture doesn't need to specify every class in the system aim for the 80 20 rule. Specify the 20% of the classes that make up 80% of the system's behavior. (Jacobson, Booch and Rumbaugh 1999; Cruchten 2000)
 
+### Data Design
+
+- The architecture should describe the major files and table designs to be used.
+- It should describe alternatives that were considered and justify the choices that were made.
+- If the application maintains a list of customer IDs in the architects have chosen to represent the list of IDs using a sequential access list the document should explain why a sequential access list is better than a random access list stack or hash table.
+- The architecture should specify the high level organization and contents of any databases used.
+- The architecture should explain why a single database is preferable to multiple databases or vice versa explain why a database is preferable to flat files identify possible interactions with other programs that access the same data explain what views have been created on the data and so on.
+
+### User Interface Design
+
+- The user interface is often specified at requirements time if it isn't it should be specified in the software architecture.
+- The architecture should specify major elements of web page formats GUIs command line interfaces and so on.
+- The architecture should be modularized so that a new user interface can be substituted without affecting the business rules and output parts of the program.
+
+### Resource Management
+
+- The architecture should describe a plan for managing scarce resources such as database connections threads and handles.
+- The architecture should estimate the resources used for nominal and extreme cases. In a simple case, the estimates should show that the resources needed are well within the capabilities of the intended implementation environment. In a more complex case, the application might be required to more actively manage its own resources. If it is the resource manager should be architected as carefully as any other part of the system.
+
 ## Open questions
 
 
