@@ -64,9 +64,9 @@ Accurate take recognition is required, so takes can be organised correctly:
 - The take closes on silence.
 - The start time is saved with the take's stats.
 
-### Take labelling
+### Segments, not labels
 
-Silent Witness also grabs the take name and track markers from the DAW automatically, so takes arrive in the engine already labelled, with no work from the artist. The session notes effectively write themselves while you sing.
+Silent Witness cannot assume labels. No plug-in format gives an insert a standard way to read take/clip names or timeline markers, so a take arrives labelled only when the host offers a host-specific path to that data. Silent Witness probes what the current host actually exposes at session start and degrades in tiers: transport data (playhead, tempo, sample rate) where available, audio-only detection where it is not, and labels only where a real path to them exists. Where no label is available, the take stays unlabelled until the artist names it later in Take Explorer — detection never depends on labels.
 
 ## Stat extraction — rule 1: window, amplitude, smooth
 
@@ -85,7 +85,7 @@ This rule keeps the data clean for the engine, protects privacy, and preserves t
 Kept, per take:
 
 - Extracted statistics (starting with the smoothed amplitude stats above)
-- Metadata: take name and track markers from the DAW, start/stop times from take recognition
+- Metadata: start/stop times from take recognition; take name and markers only when the host actually exposes them (nullable, with their source recorded)
 - Stress points
 - Notes, tags, and segments added later in Take Explorer
 
@@ -97,7 +97,7 @@ Dropped:
 
 1. The artist sings. Silent Witness sits, invisible, as the last insert on the vocal recording track.
 2. Silent Witness syncs to the DAW transport, sees the same audio blocks being recorded, and detects take start/stop by threshold.
-3. It windows the stream, extracts amplitude per slice, smooths outlier peaks with a local average, and labels the take with the DAW's take name and markers.
+3. It windows the stream, extracts amplitude per slice, and smooths outlier peaks with a local average. If the host exposed a take name or markers through a real API path, they are attached as labels; otherwise the take is stored unlabelled.
 4. Only stats, metadata, and stress points are handed off — via a lock-free ring buffer — to the Longitudinal Analysis Engine. The raw audio is dropped.
 5. The engine, a thin coordinator over the central SQLite stats store, runs the small analysis services (fatigue, trends, sessions) over the stored stats.
 6. Take Explorer reads from the engine/store so the artist can sift, trim, annotate, segment, tag, and search takes later — after the session, not during it.
