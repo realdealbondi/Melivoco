@@ -118,6 +118,13 @@ Dropped:
 
 ### Major Classes
 
+- The architecture should specify the major classes to be used.
+- It should identify the responsibilities of each major class and how the class will interact with other classes.
+- It should include descriptions of the class hierarchies of state transitions and of object persistence.
+- If the system is large enough it should describe how classes are organized into subsystems.
+- The architecture should describe other class designs that were considered and give reasons for preferring the organization that was chosen.
+- The architecture doesn't need to specify every class in the system aim for the 80 20 rule. Specify the 20% of the classes that make up 80% of the system's behavior. (Jacobson, Booch and Rumbaugh 1999; Cruchten 2000)
+
 ## Open questions
 
 
