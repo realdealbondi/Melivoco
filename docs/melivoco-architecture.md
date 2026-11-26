@@ -173,6 +173,25 @@ Dropped:
 
 - The architecture should specify a look ahead, look behind or just in time reading scheme. And it should describe the level at which IO errors are detected at the field, record, stream or file level.
 
+### Error Processing
+
+- Is error processing corrective or merely detective? If corrective, the program can attempt to recover from errors. If it's merely detective, the program can continue processing as if nothing had happened or it can quit. In either case, it should notify the user that it detected an error.
+- Is error detection active or passive? The system can actively anticipate errors. For example, by checking user input for validity or it can passively respond to them only when it can't avoid them. For example, when a combination of user input provides a numeric overflow, it can clear the way or clean up the mess. Again, in either case, the choice has user interface implications.
+- How does a program propagate errors? Once it detects an error, it can immediately discard the data that caused the error. It could treat the error as an error and enter an error processing state or it can wait until all processing is complete and notify the user that errors were detected somewhere.
+- What are the conventions for handling error messages? If the architecture doesn't specify a single consistent strategy the user interface will appear to be a confusing macaroni and dried bean collage of different interfaces in different parts of the program. To avoid such an appearance the architecture should establish conventions for error messages.
+- How will exceptions be handled? The architecture should address when the code can throw exceptions, where they will be caught, how will they be logged, how they will be documented and so on.
+- Inside the program at what level are errors handled? You can handle them at the point of detection. Pass them off to an error handling class or pass them up the call chain.
+- What is the level of responsibility of each class for validating its input data? Is each class responsible for validating its own data or is there a group of classes responsible for validating the system's data? Can classes at any level assume that the data they're receiving is clean?
+- Do you want to use your environment's built-in exception handling mechanism or build your own? The fact that an environment has a particular error handling approach doesn't mean that it's the best approach for your requirements.
+
+### Architectural Feasibility
+
+- The architecture should demonstrate that the system is technically feasible. If infeasibility in any area could render the project unworkable the architecture should indicate how those issues have been investigated through proof of concept prototypes, research or other means. These risks should be resolved before full scale construction begins.
+
+### Over-Engineering
+
+- The architecture should clearly indicate whether programmers should err on the side of over engineering or on the side of doing the simple thing that works.
+
 ## Open questions
 
 
