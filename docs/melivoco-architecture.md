@@ -144,6 +144,35 @@ Dropped:
 - The architecture should describe a plan for managing scarce resources such as database connections threads and handles.
 - The architecture should estimate the resources used for nominal and extreme cases. In a simple case, the estimates should show that the resources needed are well within the capabilities of the intended implementation environment. In a more complex case, the application might be required to more actively manage its own resources. If it is the resource manager should be architected as carefully as any other part of the system.
 
+### Security
+
+- The architecture should describe the approach to design level and code level security.
+- If a threat model has not previously been built it should be built at architecture time. Coding guidelines should be developed with security implications in mind including approaches to handling buffers. Rules for handling untrusted data encryption, level of detail contained in error messages, protecting secret data that's in memory and other issues.
+
+### Performance
+
+- Performance goals can include resource use in which case the goals should also specify priorities among resources including speed versus memory versus cost. If performance is a concern, performance goals should be specified in their requirements.
+- The architecture should provide estimates and explain why the architects believe the goals are achievable. If certain areas are at risk of failing to meet their goals, the architecture should say so. If certain areas require the use of specific algorithms or data types to meet their performance goals the architecture should say that.
+- The architecture can also include space and time budgets for each class or object.
+
+### Scalability
+
+- Scalability is the ability of a system to grow to meet future demands. The architecture should describe how the system will address growth in number of users, number of servers, number of network nodes, number of database records, size of database records, transaction volume and so on. If the system is not expected to grow in scalability is not an issue. The architecture should make that assumption explicit.
+
+### Interoperability
+
+- If the system is expected to share data or resources with other software or hardware the architecture should describe how that will be accomplished.
+
+### Internationalization/Localization
+
+- Internationalization is the technical activity of preparing a program to support multiple locales. Internationalization is often known as I18N because the first and last characters in internationalization are I and N and because there are 18 letters in the middle of the word. Localization known as L10N for the same reason is the activity of translating a program to support a specific local language.
+- If the program is to be used commercially the architecture should show that the typical string and character set issues have been considered. Including character set used ASCII DBCS, EBCDIC, MBCS, Unicode, ISO 8859 and so on. Kinds of strings used like C strings, visual basic strings and so on. Maintaining the strings without changing the code and translating the strings into foreign languages with minimal impact on the code and the user interface.
+- The architecture can decide to use strings in line in the code where they're needed keep the strings in a class and reference them through the class interface or store the strings in a resource file. The architecture should explain which option was chosen and why.
+
+### Input/Output
+
+- The architecture should specify a look ahead, look behind or just in time reading scheme. And it should describe the level at which IO errors are detected at the field, record, stream or file level.
+
 ## Open questions
 
 
